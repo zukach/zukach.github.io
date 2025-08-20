@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Food Good</title>
+  <meta name="description" content="Healthy, delicious, and simple. Coming soon.">
+  <meta name="theme-color" content="#111111">
+  <meta property="og:title" content="Food Good">
+  <meta property="og:description" content="Healthy, delicious, and simple. Coming soon.">
+  <meta property="og:type" content="website">
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'sf-pro-display', -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #111;
+      background: #000;
+      overflow: hidden;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { color: #e5e7eb; background: #000; }
+    }
+    .stage { position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100svh; overflow: hidden; }
+    .bg-video { position: absolute; inset: 0; width: 100vw; height: 100vh; height: 100svh; object-fit: cover; object-position: center; }
+    .overlay-img { position: absolute; inset: 0; width: 100vw; height: 100vh; height: 100svh; object-position: center; z-index: 2; pointer-events: none; }
+    .overlay { position: absolute; inset: 0; width: 100vw; height: 100vh; height: 100svh; z-index: 2; pointer-events: none; }
+
+    /* UI overlay */
+    .site-header { position: fixed; top: 1.25rem; left: 1.25rem; right: 1.25rem; display: flex; align-items: center; justify-content: space-between; z-index: 3; color: #fff; }
+    .brand { font-weight: 700; letter-spacing: 0.06em; font-size: 1rem; text-transform: uppercase; }
+    .nav-spacer { flex: 1; }
+
+    .blurb { position: fixed; left: 1.5rem; bottom: 2rem; z-index: 3; color: #fff; max-width: 44rem; }
+    .blurb h2 { margin: 0 0 0.5rem; font-size: 1.25rem; font-weight: 700; }
+    .blurb p { margin: 0; font-size: 0.95rem; opacity: 0.85; max-width: 60ch; }
+
+    .actions { position: fixed; right: 1.5rem; bottom: 2rem; display: flex; flex-direction: column; align-items: flex-end; gap: 0.9rem; z-index: 3; }
+    .actions-top, .actions-bottom { display: grid; grid-template-columns: repeat(3, minmax(180px, 1fr)); gap: 0.75rem; width: clamp(300px, 60vw, 720px); }
+    .actions-mobile-cta { display: none; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.25rem; padding: 8px 32px 8px 24px; border-radius: 999px; text-decoration: none; color: #1a1a1a; background: #ffc517; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); transition: background 140ms ease, transform 120ms ease; width: 100%; }
+    .btn-brand { padding-left: 0; padding-right: 0; }
+    .btn:hover { background: #e5b314; transform: translateY(-1px); }
+    .btn:active { background: #cf9f0f; transform: translateY(0); }
+    .btn:visited { color: #1a1a1a; }
+    .btn .icon { width: 18px; height: 18px; display: inline-block; }
+    .btn .label { font-size: 0.95rem; }
+    .btn-primary { padding: 0.8rem 1.25rem; font-weight: 600; width: clamp(240px, 36vw, 440px); justify-content: center; }
+    .btn-primary em { font-style: italic; opacity: 0.9; }
+    .btn-brand .icon { width: 60px; height: 22px; }
+    .bolt-icon { transform: scale(1.2); transform-origin: center; }
+    .label { font-size: 16px; font-weight: 500; color: rgba(0, 0, 0, 1); }
+   
+    
+    /* Mobile layout up to 1024px */
+    @media (max-width: 1024px) {
+      .actions { left: 1rem; right: 1rem; align-items: stretch; gap: 0.75rem; }
+      .actions-top, .actions-bottom { width: 100%; grid-template-columns: repeat(3, 1fr); }
+      .actions-mobile-cta { display: block; width: 100%; }
+      .actions-mobile-cta .btn-primary { width: 100%; padding-top: 14px; padding-bottom: 14px; }
+      .blurb h2 { font-size: 18px; }
+      .blurb p { font-size: 12px; }
+      .blurb { padding-bottom: 130px;}
+      .btn .label { font-size: 12px; }
+    }
+
+    /* Tighten horizontal padding on small phones */
+    @media (max-width: 768px) {
+      .btn { padding-left: 0; padding-right: 0; }
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <meta name="robots" content="index,follow">
+</head>
+<body>
+  <div class="stage" aria-hidden="true">
+    <video class="bg-video" autoplay muted loop playsinline preload="auto" poster="media/Subtract-1.png">
+      <source src="media/video.mp4" type="video/mp4">
+    </video>
+    <picture class="overlay">
+      <source media="(max-width: 768px)" srcset="media/Subtract-1.png">
+      <img class="overlay-img" src="media/Subtract.png" alt="" loading="eager" decoding="sync">
+    </picture>
+  </div>
+  
+  <header class="site-header" role="banner">
+    <div class="nav-spacer"></div>
+  </header>
+  
+  <section class="blurb" aria-live="polite">
+    <h2 style="color:rgba(255, 197, 23, 1); font-weight: 500; ">Coming Soon</h2>
+    <p>We’re getting ready to go public, and we’d love your support! Stay tuned for updates — we can’t wait to welcome you on this journey.</p>
+    <p style="color:rgba(255, 197, 23, 1);">-- Eat This, Not That</p>
+  </section>
+  
+  <nav class="actions" aria-label="Social and actions">
+    <div class="actions-top">
+      <a class="btn" href="https://www.facebook.com/fooddgoodd/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+        <img src="media/Facebook.svg" alt="Facebook" class="icon">
+        <span class="label">Facebook</span>
+      </a>
+      <a class="btn" href="https://www.instagram.com/fooddgoodd/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+        <img src="media/instagram.svg" alt="Instagram" class="icon">
+        <span class="label">Instagram</span>
+      </a>
+      <a class="btn" href="https://www.tiktok.com/@__foodgood__?lang=en" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+        <img src="media/tiktok.svg" alt="TikTok" class="icon">
+        <span class="label">Tiktok</span>
+      </a>
+    </div>
+    <div class="actions-bottom">
+      <a class="btn btn-brand" href="https://glovoapp.com/ge/en/tbilisi/food-good-tbi/" aria-label="Glovo" target="_blank" rel="noopener noreferrer">
+        <img src="media/glovo.svg" alt="Glovo" class="icon">
+      </a>
+      <a class="btn btn-brand" href="https://wolt.com/en/geo/tbilisi/restaurant/food-good1?srsltid=AfmBOoo-GiVYq35PST2p2qL3BUeJjxpW6KFVRs17vdFfC2MAxZFWNaKO" aria-label="Wolt" target="_blank" rel="noopener noreferrer">
+        <img src="media/wolt.svg" alt="Wolt" class="icon">
+      </a>
+      <a class="btn btn-brand" href="https://food.bolt.eu/en-US/15-tbilisi/p/124860-food-good-vake" aria-label="Bolt" target="_blank" rel="noopener noreferrer">
+        <img src="media/bolt.svg" alt="Bolt" class="icon bolt-icon">
+      </a>
+    </div>
+  </nav>
+  <noscript>
+    <img class="overlay-img" src="media/Subtract.png" alt="" style="position:fixed;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2">
+  </noscript>
+</body>
+</html>
+
+
